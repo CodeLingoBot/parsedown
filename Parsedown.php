@@ -215,7 +215,7 @@ class Parsedown
                     continue;
                 }
                 else
-                {
+               {
                     if ($this->isBlockCompletable($CurrentBlock['type']))
                     {
                         $methodName = 'block' . $CurrentBlock['type'] . 'Complete';
@@ -284,7 +284,7 @@ class Parsedown
                 $CurrentBlock = $Block;
             }
             else
-            {
+           {
                 if (isset($CurrentBlock))
                 {
                     $Elements[] = $this->extractElement($CurrentBlock);
@@ -1416,7 +1416,7 @@ class Parsedown
             $extent += strlen($matches[0]);
         }
         else
-        {
+       {
             if (preg_match('/^\s*\[(.*?)\]/', $remainder, $matches))
             {
                 $definition = strlen($matches[1]) ? $matches[1] : $Element['handler']['argument'];
@@ -1439,7 +1439,6 @@ class Parsedown
             $Element['attributes']['href'] = $Definition['url'];
             $Element['attributes']['title'] = $Definition['title'];
         }
-
         return array(
             'extent' => $extent,
             'element' => $Element,
@@ -1735,7 +1734,7 @@ class Parsedown
                 $markup .= $this->element($Element['element']);
             }
             else
-            {
+           {
                 if (!$permitRawHtml)
                 {
                     $markup .= self::escape($text, true);
